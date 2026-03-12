@@ -1,0 +1,235 @@
+.view-players {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 22px 20px 30px;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    height: 100vh;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+/* leaderboard */
+.leaderboard-scroll {
+    flex: 1;
+    width: 100%;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+
+    scrollbar-width: thin;
+    scrollbar-color: #659229 #403E40;
+}
+.leaderboard-scroll::-webkit-scrollbar {
+    width: 14px;
+}
+.leaderboard-scroll::-webkit-scrollbar-track {
+    background-color: #403E40;
+}
+.leaderboard-scroll::-webkit-scrollbar-thumb {
+    background-color: #659229;
+}
+
+.leaderboard-scroll-wrapper {
+    position: relative;
+    flex: 1;
+    width: 100%;
+    max-width: 1020px;
+    overflow: hidden;
+    display: flex;
+}
+
+.leaderboard-scroll-wrapper::before,
+.leaderboard-scroll-wrapper::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 60px;
+    pointer-events: none;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+
+.leaderboard-scroll-wrapper::before {
+    top: 0;
+    background: linear-gradient(to bottom, #191919, transparent);
+}
+
+.leaderboard-scroll-wrapper::after {
+    bottom: 0;
+    background: linear-gradient(to top, #191919, transparent);
+}
+
+.leaderboard-scroll-wrapper.fade-top::before {
+    opacity: 1;
+}
+
+.leaderboard-scroll-wrapper.fade-bottom::after {
+    opacity: 1;
+}
+
+/* leaderboard labels */
+.leaderboard-labels {
+    display: flex;
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 1000px;
+    height: 50px;
+    margin-bottom: 4px;
+    justify-content: space-between;
+}
+.leaderboard-labels .left,
+.leaderboard-labels .right {
+    display: flex;
+    height: 100%;
+}
+.leaderboard-labels .status-light {
+    width: 8px;
+    height: 100%;
+    border-right: 2px solid transparent;
+}
+.leaderboard-labels .leaderboard-position {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.leaderboard-labels .icon {
+    fill: #5a5a5a;
+    width: 40px;
+    height: 40px;
+}
+.leaderboard-labels .player-head {
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-left: 2px solid transparent;
+    border-right: 2px solid transparent;
+}
+.leaderboard-labels .player-name {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 24px;
+}
+.leaderboard-labels .player-name p {
+    margin-top: -3px;
+    color: #5a5a5a;
+}
+.leaderboard-labels .player-score {
+    display: flex;
+    font-size: 22px;
+    align-items: center;
+    padding: 0 15px;
+}
+.leaderboard-labels .player-score p {
+    margin-top: -3px;
+    color: #5a5a5a;
+}
+.leaderboard-labels .controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding: 0 36px;
+    font-size: 22px;
+}
+.leaderboard-labels .controls p {
+    margin-top: -3px;
+    color: #5a5a5a;
+}
+
+/* add/edit player data modal */
+.data-management {
+    flex-shrink: 0;
+    background: #393939;
+    display: flex;
+    height: 50px;
+    margin-top: 20px;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+    padding: 10px;
+    gap: 10px;
+    border: 2px solid transparent;
+    transition: border 0.15s ease;
+}
+.data-management.edit-mode {
+    border: 1px solid #2870EA;
+}
+.data-management .player-head {
+    display: flex;
+    border: 2px solid #424242;
+    transition: border 0.1s ease;
+    cursor: pointer;
+}
+.data-management .player-head:hover {
+    border: 2px solid #b5b5b5;
+}
+.data-management .player-head:active {
+    border: 2px solid #ffffff;
+}
+.data-management input {
+    min-width: 0;
+    border: none;
+    border-radius: 0;
+    background-color: #222222;
+    color: white;
+    box-shadow: 0 4px 7px rgba(0, 0, 0, 0.4);
+    font-family: 'Minecraft', sans-serif;
+    font-size: 22px;
+    padding: 3px 0 0 6px;
+}
+.data-management button {
+    border: none;
+    width: 120px;
+    color: #fff;
+    fill: #fff;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 22px;
+    background: linear-gradient(130deg, #7ac002 20%, #5a8f00 77.5%);
+}
+.data-management button:hover {
+    background: linear-gradient(130deg, #6ba800 20%, #477000 77.5%);
+}
+.data-management button:active {
+    background: linear-gradient(130deg, #588b00 20%, #345100 77.5%);
+}
+
+.data-management .manage-data-btn.update-mode {
+    background: linear-gradient(130deg, #2870EA 20%, #1B4AEF 77.5%);
+}
+.data-management .manage-data-btn.update-mode:hover {
+    background: linear-gradient(130deg, #1957c2 20%, #0d34c2 77.5%);
+}
+.data-management .manage-data-btn.update-mode:active {
+    background: linear-gradient(130deg, #1245a0 20%, #0a2a9e 77.5%);
+}
+
+.data-management .delete-btn {
+    aspect-ratio: 1 / 1;
+    width: auto;
+    background: linear-gradient(130deg, #e84545 20%, #ef1b1b 77.5%);
+}
+.data-management .delete-btn:hover {
+    background: linear-gradient(130deg, #b83030 20%, #c90f0f 77.5%);
+}
+.data-management .delete-btn:active {
+    background: linear-gradient(130deg, #a22626 20%, #a90909 77.5%);
+    color: #a3a3a3;
+    fill: #a3a3a3;
+}
+.data-management .btn-label {
+    display: block;
+    margin-top: -4px;
+    font-family: 'Minecraft', sans-serif;
+}

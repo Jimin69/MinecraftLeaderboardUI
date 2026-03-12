@@ -1,0 +1,170 @@
+.list-item {
+    display: flex;
+    background: #393939;
+    border: 2px solid #424242;
+    width: 100%;
+    max-width: 1000px;
+    height: 50px;
+    justify-content: space-between;
+    transition: border 0.1s ease, transform 0.1s ease, background 0.1s ease;
+    flex-shrink: 0;
+    box-shadow: 0px 0px 12px rgba(0, 0, 0, 0.4);
+    cursor: pointer;
+}
+.list-item:hover {
+    border: 1px solid #6b6b6b;
+    transform: scale(0.997);
+}
+.list-item.selected {
+    border: 2px solid #2870EA !important;
+    background: #323a52;
+    transform: scale(0.997);
+}
+.list-item.selected .status-light {
+    background: #2870EA !important;
+}
+
+.list-item .left,
+.list-item .right {
+    display: flex;
+    height: 100%;
+}
+.list-item .status-light {
+    background: #76b900;
+    width: 8px;
+    height: 100%;
+    border-right: 2px solid #424242;
+    transition: background 0.1s ease;
+}
+.list-item:hover .status-light {
+    background: #fff;
+}
+
+.list-item .leaderboard-position {
+    background: #2f2f2f;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 25px;
+}
+.list-item .leaderboard-position p {
+    margin-top: -3px;
+    color: #989898;
+}
+
+.list-item .leaderboard-position p.pos-first {
+    color: #FFD700;
+}
+.list-item .leaderboard-position p.pos-first::after {
+    color: #6b5900;
+}
+.list-item .leaderboard-position p.pos-second {
+    color: #ffffff;
+}
+.list-item .leaderboard-position p.pos-second::after {
+    color: #3b3b3b;
+}
+.list-item .leaderboard-position p.pos-third {
+    color: #CD7F32;
+}
+.list-item .leaderboard-position p.pos-third::after {
+    color: #4a2e00;
+}
+.list-item .leaderboard-position p.pos-large {
+    font-size: 20px;
+}
+
+.list-item .player-head {
+    display: flex;
+    border-left: 2px solid #424242;
+    border-right: 2px solid #424242;
+}
+.list-item .player-head img {
+    height: 100%;
+    width: auto;
+    display: block;
+}
+.list-item .player-name {
+    display: flex;
+    align-items: center;
+    padding: 0 15px;
+    font-size: 24px;
+}
+.list-item .player-name p {
+    margin-top: -3px;
+}
+.list-item .player-score {
+    display: flex;
+    font-size: 24px;
+    align-items: center;
+    padding: 0 15px;
+}
+.list-item .player-score p {
+    margin-top: -3px;
+}
+.list-item .controls {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    padding-right: 5px;
+    padding-left: 20px;
+    border-left: 2px solid #424242;
+}
+.list-item .controls button {
+    border: none;
+    width: 60px;
+    height: 35px;
+    color: #fff;
+    fill: #fff;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.list-item .controls button .icon {
+    width: 25px;
+}
+.list-item .controls .upvote-player-btn {
+    background: linear-gradient(130deg, #7ac002 20%, #5a8f00 77.5%);
+}
+.list-item .controls .downvote-player-btn {
+    background: linear-gradient(130deg, #e84545 20%, #ef1b1b 77.5%);
+}
+.list-item .controls .upvote-player-btn:hover {
+    background: linear-gradient(130deg, #6ba800 20%, #477000 77.5%);
+}
+.list-item .controls .downvote-player-btn:hover {
+    background: linear-gradient(130deg, #b83030 20%, #c90f0f 77.5%);
+}
+.list-item .controls .upvote-player-btn:active {
+    background: linear-gradient(130deg, #588b00 20%, #345100 77.5%);
+    color: #a3a3a3;
+    fill: #a3a3a3;
+}
+.list-item .controls .downvote-player-btn:active {
+    background: linear-gradient(130deg, #a22626 20%, #a90909 77.5%);
+    color: #a3a3a3;
+    fill: #a3a3a3;
+}
+
+.list-item .player-score p.score-up {
+    color: #55FF55;
+}
+.list-item .player-score p.score-up::after {
+    color: #155f00;
+}
+.list-item .player-score p.score-down {
+    color: #FF5555;
+}
+.list-item .player-score p.score-down::after {
+    color: #5f0000;
+}
+
+.list-item:nth-child(2) .status-light { background: #FFD700; }
+.list-item:nth-child(3) .status-light { background: #ffffff; }
+.list-item:nth-child(4) .status-light { background: #CD7F32; }
+.list-item:nth-child(2):hover .status-light { background: #ffffff; }
+.list-item:nth-child(3):hover .status-light { background: #ffffff; }
+.list-item:nth-child(4):hover .status-light { background: #ffffff; }
